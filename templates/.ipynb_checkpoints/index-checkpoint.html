@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+
+        </div>
+            {% for each in returndata%}
+                    <div class="col-lg-12">
+                        <h2>Latest Mars News</h2>
+                        <h4>{{each['news title']}}</h4>
+                        <h6>{{each['news paragraph']}}</h6> 
+                    </div>
+                    <div class="col-lg-8">
+                        <h2>Featured Mars Image</h2>
+                        <img src={{each['featured image url']}} alt="Featured Mars Image" height="400" width="400">
+
+                    </div>
+                    <div class="col-lg-4">
+                        <h2 class="card-title">Latest Mars News</h2>
+                        <h4 class="card-subtitle mb-2 text-muted">{{each['news title']}}</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">{{each['news paragraph']}}</h6> 
+                    </div>
+                    <div class="col-lg-4">
+                        <h2 class="card-title">Latest Mars News</h2>
+                        <h4 class="card-subtitle mb-2 text-muted">{{each['news title']}}</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">{{each['news paragraph']}}</h6> 
+                    </div>        
+            {% endfor %}
+
+    </div>
+
+</body>
+<!--     bigscrape ={'news title': news_title,
+                'news paragraph':news_p,
+                'featured image url':featured_image_url,
+                'html table':html_table,
+                'hemisphere image urls':hemisphere_image_urls} -->
+</html>
+
