@@ -36,7 +36,7 @@ def scrape():
     tables = pd.read_html(url4)
     df = tables[0]
     df.columns = ['Category','Value']
-    html_table1 = df.to_html()
+    html_table1 = df.to_html(index=False)
     html_table =html_table1.replace('\n', '')
 
 

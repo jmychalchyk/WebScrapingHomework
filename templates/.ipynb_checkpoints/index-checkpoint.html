@@ -25,28 +25,28 @@
                     </div>
                     <div class="col-lg-8">
                         <h2>Featured Mars Image</h2>
-                        <img src={{each['featured image url']}} alt="Featured Mars Image" height="400" width="400">
-
+                        <img src={{each['featured image url']}} alt="Featured Mars Image" height="500" width="700">
                     </div>
                     <div class="col-lg-4">
-                        <h2 class="card-title">Latest Mars News</h2>
-                        <h4 class="card-subtitle mb-2 text-muted">{{each['news title']}}</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">{{each['news paragraph']}}</h6> 
+                        <h2>Current Weather on Mars</h2>
+                        <h4>{{each['mars weather']}}</h4>
                     </div>
                     <div class="col-lg-4">
-                        <h2 class="card-title">Latest Mars News</h2>
-                        <h4 class="card-subtitle mb-2 text-muted">{{each['news title']}}</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">{{each['news paragraph']}}</h6> 
-                    </div>        
+                        <h2>Mars Facts</h2>
+                        <h4>{{each['html table']|safe }}></h4>                        
+                    </div> 
+                    {% for url in {{each['hemisphere image urls']}} %}
+                            <div class="col-lg-6">
+                                <h2>{{url['title']}} </h2>
+<!--                                 <img src={{url['imgurl']}} alt={{url['title']}} height="400" width="400"> -->
+                            </div>                                   
+                    {% endfor %}                    
+             
             {% endfor %}
 
     </div>
 
 </body>
-<!--     bigscrape ={'news title': news_title,
-                'news paragraph':news_p,
-                'featured image url':featured_image_url,
-                'html table':html_table,
-                'hemisphere image urls':hemisphere_image_urls} -->
+
 </html>
 
