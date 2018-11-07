@@ -1,4 +1,11 @@
-h1 {font: 400;
+h1 {font-size:50pt;
     color: blue;
+  text-align:center;  
 }
-h2 {font-size:100px;}
+
+h2 {font-size:20pt;}
+
+
+
+a {font-size: 20pt;}
+    
