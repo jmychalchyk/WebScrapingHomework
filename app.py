@@ -28,6 +28,7 @@ def scrape():
 
 
     # Insert forecast into database
+    mongo.db.collection.drop()
     mongo.db.collection.insert_one(returndata)
 
     # Redirect back to home page
